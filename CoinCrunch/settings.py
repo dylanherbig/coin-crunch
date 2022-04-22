@@ -11,10 +11,22 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
+# #STATIC_URL: specifies what to append when you call `{% static %}` as template tag. 
+# STATIC_URL = '/static/'
+
+# #STATIC_ROOT: specifies where exactly you yourself will put your static files
+# STATIC_ROOT = os.path.join(BASE_DIR, 'staticroot')
+
+# #STATICFILES_DIRS: it tells Django where to look for static files while 
+# #serving a request. 
+# STATICFILES_DIRS = [
+#     os.path.join(BASE_DIR, 'static'),
+# ]
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
@@ -37,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'base',
 ]
 
 MIDDLEWARE = [
